@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\ImageRecognitionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/file/upload', [FileController::class, 'upload']);
 
 Route::get('/file/download/{file_name}', [FileController::class, 'download']);
+
+Route::get('/image-recognition', [ImageRecognitionController::class, 'recognize']);
+Route::post('/image-recognition', [ImageRecognitionController::class, 'recognize']);
