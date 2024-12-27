@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\ImageRecognitionService;
+use App\Constants\ErrorCodes;
 use Illuminate\Http\Request;
 
 class ImageRecognitionController extends Controller
@@ -22,7 +23,7 @@ class ImageRecognitionController extends Controller
 
         $result = $this->imageRecognitionService->recognize($request->image_url);
 
-        if (!$result['success']) {
+        if ($result['code'] !== ErrorCodes::ERROR_CODE_SUCCESS) {
             return response()->json($result, 500);
         }
 
