@@ -10,6 +10,8 @@ class ErrorCodes
 	const ERROR_CODE_UPLOAD_FILE_IS_NOT_EXIST = 3;
 	const ERROR_CODE_IMAGE_RECOGNITION_FAILED = 4;
 	const ERROR_CODE_IMAGE_RECOGNITION_SERVICE_ERROR = 5;
+	const ERROR_CODE_CHAT_FAILED = 6;
+	const ERROR_CODE_CHAT_SERVICE_ERROR = 7;
 }
 
 class ErrorDescs {
@@ -19,4 +21,6 @@ class ErrorDescs {
 	const ERROR_CODE_UPLOAD_FILE_IS_NOT_EXIST = 'File does not exist!';
 	const ERROR_CODE_IMAGE_RECOGNITION_FAILED = 'Image recognition failed!';
 	const ERROR_CODE_IMAGE_RECOGNITION_SERVICE_ERROR = 'Image recognition service error!';
+	const ERROR_CODE_CHAT_FAILED = 'Chat request failed!';
+	const ERROR_CODE_CHAT_SERVICE_ERROR = 'Chat service error!';
 }

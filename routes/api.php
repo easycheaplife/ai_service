@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\ImageRecognitionController;
+use App\Http\Controllers\ChatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,6 @@ Route::get('/file/download/{file_name}', [FileController::class, 'download']);
 
 Route::get('/image-recognition', [ImageRecognitionController::class, 'recognize']);
 Route::post('/image-recognition', [ImageRecognitionController::class, 'recognize']);
+
+Route::get('/chat', [ChatController::class, 'chat']);
+Route::post('/chat', [ChatController::class, 'chat']);
