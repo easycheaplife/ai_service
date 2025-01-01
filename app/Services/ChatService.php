@@ -26,7 +26,7 @@ class ChatService
                     ],
                     [
                         'role' => 'system',
-                        'content' => '你是一位语文老师。'
+                        'content' => '你是一个乐于回答各种问题的小助手，你的任务是提供专业、准确、有洞察力的建议。'
                     ]
                 ]
             ]);
