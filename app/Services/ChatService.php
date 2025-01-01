@@ -23,6 +23,10 @@ class ChatService
                     [
                         'role' => 'user',
                         'content' => $content
+                    ],
+                    [
+                        'role' => 'system',
+                        'content' => '你是一位语文老师。'
                     ]
                 ]
             ]);
