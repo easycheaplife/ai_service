@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\ImageRecognitionController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\EssayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,13 @@ Route::post('/image-recognition', [ImageRecognitionController::class, 'recognize
 
 Route::get('/chat', [ChatController::class, 'chat']);
 Route::post('/chat', [ChatController::class, 'chat']);
+
+// 作文相关路由
+Route::prefix('essay')->group(function () {
+    $methods = ['get', 'post'];
+    Route::match($methods, '/write', [EssayController::class, 'write']);
+    Route::match($methods, '/template', [EssayController::class, 'template']);
+    Route::match($methods, '/continue', [EssayController::class, 'continue']);
+    Route::match($methods, '/correct', [EssayController::class, 'correct']);
+    Route::match($methods, '/review', [EssayController::class, 'review']);
+});
