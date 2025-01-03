@@ -17,6 +17,19 @@ class EssayService
         'review' => '作为一位语文老师，我会用专业的眼光全面点评你的作文。我会从选材立意、结构布局、语言表达、修辞手法、情感表达等多个维度进行细致分析。既肯定亮点，也指出不足，并结合多年教学经验，提供具体的提升建议'
     ];
 
+    private $appendMessages = [
+        'write' => '',
+        'template' => '',
+        'continue' => '',
+        'correct' => '',
+        'review' => "\n\n请对这篇作文进行点评：\n" .
+                   "1. 分析文章的优点和不足\n" .
+                   "2. 评价描写手法的运用\n" .
+                   "3. 指出词语和句子的使用特点\n" .
+                   "4. 提供具体的修改建议\n" .
+                   "5. 给出提高写作水平的建议"
+    ];
+
     public function __construct()
     {
         $this->apiUrl = config('api.chat.url');
@@ -28,9 +41,7 @@ class EssayService
             $messages = [
                 [
                     'role' => 'user',
-                    'content' => $type === 'review' 
-                        ? $content . "\n\n请对这篇作文进行点评：\n1. 分析文章的优点和不足\n2. 评价描写手法的运用\n3. 指出词语和句子的使用特点\n4. 提供具体的修改建议\n5. 给出提高写作水平的建议"
-                        : $content
+                    'content' => $content . $this->appendMessages[$type]
                 ],
                 [
                     'role' => 'system',
