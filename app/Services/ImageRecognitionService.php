@@ -15,12 +15,19 @@ class ImageRecognitionService
         $this->apiUrl = config('api.image_recognition.url');
     }
 
-    public function recognize(string $imageUrl)
+    public function recognize(string $imageUrl, ?string $question = null)
     {
         try {
-            $response = Http::post($this->apiUrl, [
+            $params = [
                 'image_url' => $imageUrl
-            ]);
+            ];
+
+            // 如果提供了问题，则添加到请求参数中
+            if ($question) {
+                $params['question'] = $question;
+            }
+
+            $response = Http::post($this->apiUrl, $params);
 
             if (!$response->successful()) {
                 return [

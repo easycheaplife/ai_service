@@ -18,10 +18,14 @@ class ImageRecognitionController extends Controller
     public function recognize(Request $request)
     {
         $request->validate([
-            'image_url' => 'required|url'
+            'image_url' => 'required|url',
+            'question' => 'nullable|string'
         ]);
 
-        $result = $this->imageRecognitionService->recognize($request->image_url);
+        $result = $this->imageRecognitionService->recognize(
+            $request->image_url,
+            $request->question
+        );
 
         if ($result['code'] !== ErrorCodes::ERROR_CODE_SUCCESS) {
             return response()->json($result, 500);

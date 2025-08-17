@@ -12,6 +12,8 @@ class ErrorCodes
 	const ERROR_CODE_IMAGE_RECOGNITION_SERVICE_ERROR = 5;
 	const ERROR_CODE_CHAT_FAILED = 6;
 	const ERROR_CODE_CHAT_SERVICE_ERROR = 7;
+	const ERROR_CODE_ESSAY_FAILED = 8;
+	const ERROR_CODE_ESSAY_SERVICE_ERROR = 9;
 }
 
 class ErrorDescs {
@@ -23,4 +25,6 @@ class ErrorDescs {
 	const ERROR_CODE_IMAGE_RECOGNITION_SERVICE_ERROR = 'Image recognition service error!';
 	const ERROR_CODE_CHAT_FAILED = 'Chat request failed!';
 	const ERROR_CODE_CHAT_SERVICE_ERROR = 'Chat service error!';
+	const ERROR_CODE_ESSAY_FAILED = 'Essay processing failed!';
+	const ERROR_CODE_ESSAY_SERVICE_ERROR = 'Essay service error!';
 }
